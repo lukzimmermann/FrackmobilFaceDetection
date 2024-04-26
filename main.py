@@ -1,10 +1,10 @@
 import cv2 as cv
-from face_detection import FaceDetector
+from src.face_detection import FaceDetector
 
 def main():
     print("Initialize...")
     face_detector = FaceDetector(3)
-    cap = cv.VideoCapture(0)
+    cap = cv.VideoCapture(1)
     cv.namedWindow("frame", cv.WND_PROP_FULLSCREEN)
 
     while True:
