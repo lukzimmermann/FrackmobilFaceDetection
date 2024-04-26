@@ -6,8 +6,8 @@ import sys
 import json
 from deepface import DeepFace
 
-TIME_INTERVAL = 3
-NUMBER_OF_IMAGES = 5
+TIME_INTERVAL = 0.2
+NUMBER_OF_IMAGES = 30
 
 
 def main(name: str):
@@ -43,7 +43,7 @@ def main(name: str):
                 image = cv.rectangle(image.copy(), (x,y), (x+w, y+h), (0,0,255), 3)
                 
                 cv.imshow("frame", image)
-                cv.waitKey(1000)
+                cv.waitKey(500)
                 if confidence > 0.85:
                     with open(f'{path}/{name}_{captured_images+1}.json', 'w') as file:
                         json.dump(embedding, file)
