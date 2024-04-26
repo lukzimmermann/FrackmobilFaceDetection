@@ -10,7 +10,7 @@ def main():
     while True:
         try:
             _, frame = cap.read()
-            frame = frame[:,0:1280,:]
+            #frame = frame[:,0:1280,:]
             image = face_detector.detect(frame)
             cv.imshow("frame", image)
         except Exception as e:
